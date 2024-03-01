@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Care Recipients</title>
+    <!-- Bootstrap CSS (optional, for styling) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-4">
+    <h2>Care Recipients</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Type of Service</th>
+                <th>Contact</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iterate over the list of CareRecipient objects -->
+            <tr th:each="cr : ${careReceps}">
+                <td th:text="${cr.id}"></td>
+                <td th:text="${cr.fname}"></td>
+                <td th:text="${cr.lname}"></td>
+                <td th:text="${cr.age}"></td>
+                <td th:text="${cr.type_of_service}"></td>
+                <td th:text="${cr.contact}"></td>
+                <!-- Add more cells for additional fields -->
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
